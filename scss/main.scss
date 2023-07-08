@@ -1,1 +1,641 @@
-@import "normolize";
+@import "normalize";
+@import "variables";
+
+h1 {
+  font-family: Bebas Neue;
+  font-size: 6rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  line-height: 6.25rem;
+  overflow: hidden;
+}
+
+h2 {
+  font-family: Galada;
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: Bebas Neue;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-family: Bebas Neue;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+}
+
+h5 {
+  color: $primary;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+p {
+  color: $text;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+input {
+}
+
+input::placeholder {
+  color: #c4c4c4;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+button {
+  border-radius: 3.125rem;
+  background: $primary;
+  color: #ffffff;
+  font-family: Bebas Neue;
+  font-size: 1.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#header__logo {
+  transition: all 0.4s ease;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+}
+
+.scrolling {
+  margin-right: 6.25rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__link {
+    font-family: Bebas Neue;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.075rem;
+    color: $title;
+
+    &:not(:last-child) {
+      margin-right: 6.25rem;
+    }
+  }
+  &__logo {
+    margin: 1.125rem 6.25rem 1.125rem 0;
+  }
+}
+
+.banner {
+  &__background {
+    position: relative;
+    height: 67.5rem;
+    overflow: hidden;
+
+    &--image {
+      height: 100%;
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 12rem;
+    left: 36.8125rem;
+  }
+  &__subtitle {
+    position: absolute;
+    color: #ffffff;
+
+    &:first-of-type {
+      top: 17.875rem;
+      left: 64rem;
+    }
+    &:last-of-type {
+      top: 23.375rem;
+      left: 73.875rem;
+    }
+  }
+  &__button {
+    padding: 1rem 5.6875rem;
+    position: absolute;
+    top: 58.75rem;
+    left: 51.25rem;
+  }
+}
+
+.howItWorks {
+  &__title {
+    text-align: center;
+    margin-top: 6.25rem;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
+  &__button {
+    margin-top: 3.125rem;
+    text-align: center;
+
+    button {
+      padding: 1rem 5.33rem;
+    }
+  }
+}
+
+.card {
+  &__title {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  &__description {
+    margin-top: 1.25rem;
+    width: 17.625rem;
+    text-align: center;
+  }
+}
+
+.cards__card:nth-child(2) {
+  margin: 0 11.6875rem;
+}
+
+.boxOfMonth {
+  margin-top: 6.25rem;
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 4.5rem 1.5625rem;
+    background-color: $bg;
+  }
+  &__right {
+    margin-left: 4.625rem;
+  }
+
+  &__left {
+  }
+}
+
+.right {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-left: 1.25rem;
+  }
+  &__description {
+    width: 32.5rem;
+    margin-top: 1.875rem;
+  }
+
+  &__button {
+    position: relative;
+    padding: 1rem 3.643rem;
+    margin-top: 1.875rem;
+    z-index: 1;
+    &__image {
+      position: absolute;
+      top: 25.575rem;
+      left: 75rem;
+    }
+  }
+}
+
+.ourMission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6.25rem 0 0 11.375rem;
+
+  &__textBlock {
+  }
+
+  &__image__foots {
+    margin-bottom: 13.6429rem;
+  }
+}
+
+.textBlock {
+  &__pre-title {
+    display: flex;
+  }
+
+  &__title {
+    width: 66rem;
+    letter-spacing: 0;
+  }
+
+  &__subtitle {
+    margin-left: 45.4286rem;
+    background: linear-gradient(to bottom right, #74e6cf, #c0e594);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.recentPosts {
+  &__container {
+    padding: 6.25rem 0;
+    background-color: $bg;
+  }
+
+  &__pre-title {
+    display: block;
+    text-align: center;
+  }
+
+  &__title {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__image {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+.blog {
+  &__container {
+    position: relative;
+    padding: 6.25rem 0;
+  }
+
+  &__image {
+    position: absolute;
+    top: 42%;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.125rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    &__content {
+      padding: 2.5rem;
+      width: 24.1875rem;
+      border: 1px solid $bg;
+      background-color: #ffffff;
+    }
+
+    &__decoration {
+      margin-top: 2.5rem;
+    }
+
+    &__description {
+      margin-top: 1.3115rem;
+      font-size: 0.875rem;
+    }
+
+    &__button {
+      text-align: right;
+      margin-top: 1.75rem;
+
+      button {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.6px;
+        font-family: Roboto;
+      }
+    }
+  }
+
+  &__card:nth-child(2) {
+    margin: 0 1.875rem;
+  }
+}
+
+.blog__card:nth-child(2) .blog__card__content {
+  padding-top: 1.5rem;
+}
+
+.blog__card:nth-child(2) .blog__card__decoration {
+  margin-top: 1.5625rem;
+}
+
+.signUp {
+  &__container {
+    position: relative;
+    padding: 6.5rem 21.875rem 15.1875rem;
+    background-color: $bg;
+    overflow: hidden;
+  }
+
+  &__pre-title {
+    margin-left: 4.5rem;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.25rem;
+  }
+
+  &__subtitle {
+    margin-top: 1rem;
+  }
+
+  &__decoration {
+    position: absolute;
+    top: 21.75rem;
+    left: 14.25rem;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    width: 37.1875rem;
+    padding: 0.9375rem;
+    background-color: #ffffff;
+    border-radius: 0 3.125rem 3.125rem 0;
+
+    &__input {
+      font-family: Roboto;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    &__button {
+      padding: 1rem 6.64rem;
+    }
+  }
+
+  &__popUp {
+    border-radius: 20px;
+    border: 1px solid #fff;
+    display: none;
+  }
+
+  &__description {
+    margin-top: 0.65rem;
+    width: 37.1875rem;
+    color: #c4c4c4;
+    font-size: 12px;
+
+    &__link {
+      color: #c4c4c4;
+      text-decoration: underline;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 7.5rem;
+    right: 0;
+  }
+}
+
+#-error {
+  position: absolute;
+  bottom: 0;
+  color: $primary;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.compensate-for-scrollbar {
+  margin-right: 0 !important;
+}
+
+.fancybox-content {
+  padding: 0;
+}
+
+.popUp {
+  &__container {
+    display: flex;
+  }
+  &__left {
+    padding: 2.4375rem 1.125rem;
+    background-color: $bg;
+  }
+
+  &__right {
+    text-align: center;
+
+    padding: 6.25rem 3.875rem;
+
+    &__title {
+    }
+
+    &__image {
+      margin: 1.25rem 0;
+    }
+
+    &__subtitle {
+      width: 25.375rem;
+    }
+
+    &__button {
+      padding: 1rem 7.3rem;
+      margin-top: 3.125rem;
+    }
+  }
+}
+
+.slider {
+  &__container {
+    padding: 6.25rem 6.25rem 0 0;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__titles {
+    margin-left: 21.875rem;
+  }
+}
+
+.slide {
+  display: flex;
+  margin-top: 3.125rem;
+  justify-content: center;
+  align-items: center;
+  gap: 6.25rem;
+
+  &__img {
+    z-index: 1;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 3.875rem;
+  }
+
+  &__rate {
+    font-family: Roboto;
+    font-size: 0.875rem;
+    line-height: 180%;
+    color: #e5e5e5;
+  }
+
+  &__content {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: #74e6cf;
+      width: 0.0625rem;
+      height: 17.3rem;
+      right: 0.125rem;
+      top: 8.1rem;
+    }
+  }
+
+  &__decoration {
+    margin-top: 3.125rem;
+  }
+
+  &__description {
+    margin-top: 1.875rem;
+    padding-right: 3.125rem;
+    width: 35.3125rem;
+    height: 17.5625rem;
+    line-height: 180%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 35.3125rem;
+      height: 2rem;
+      background: #fff;
+      filter: blur(0.9375rem);
+      bottom: 5rem;
+      right: 1rem;
+    }
+
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 50px;
+      background: linear-gradient(141deg, #74e6cf 0%, #c0e594 100%);
+    }
+  }
+
+  &__buttons {
+    margin-top: 3.125rem;
+    padding: 0.25rem;
+  }
+
+  &__button {
+    font-family: Roboto;
+    font-size: 0;
+    box-shadow: 0 0 0 4px $bg;
+    padding: 0.3438rem;
+    border-radius: 3.125rem;
+    background: linear-gradient(297deg, #74e6cf 0%, #c0e594 100%);
+  }
+}
+
+.slide__button:nth-child(2) {
+  margin-left: 0.625rem;
+  transform: rotate(180deg);
+}
+
+.footer {
+  margin-top: 10.25rem;
+  background-color: #ffffff;
+  &__container {
+    margin: 0 auto;
+  }
+
+  &__top {
+    border-top: 1px solid $bg;
+    border-bottom: 1px solid $bg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.375rem 21.875rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+  }
+
+  &__link {
+    color: $title;
+    font-family: Bebas Neue;
+    font-size: 1.125rem;
+    letter-spacing: 0.0563rem;
+
+    &--img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.875rem;
+      height: 1.875rem;
+      border-radius: 50%;
+      border: 0.1rem solid $primary;
+    }
+  }
+
+  &__logo {
+    img {
+      width: 5.9375rem;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 21.875rem;
+  }
+
+  &__text {
+    color: $text;
+    font-family: Roboto;
+    font-size: 0.75rem;
+  }
+}
+
+.footer__text:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
