@@ -111,13 +111,11 @@ header {
   margin: 1.125rem 6.25rem 1.125rem 0;
 }
 
-.banner__background {
+.banner__container {
   position: relative;
-  height: 67.5rem;
-  overflow: hidden;
 }
-.banner__background--image {
-  height: 100%;
+.banner__background {
+  position: absolute;
 }
 .banner__title {
   position: absolute;
@@ -209,25 +207,32 @@ header {
   left: 75rem;
 }
 
-.ourMission {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6.25rem 0 0 11.375rem;
+.ourMission__container {
+  position: relative;
+  padding: 6.25rem 28.375rem 0 21.25rem;
 }
 .ourMission__image__foots {
-  margin-bottom: 13.6429rem;
+  position: absolute;
+  top: 10.1875rem;
+  left: 11.375rem;
+}
+.ourMission__image__decorationRope {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .textBlock__pre-title {
   display: flex;
+  gap: 0.625rem;
 }
 .textBlock__title {
+  margin-top: 1rem;
   width: 66rem;
   letter-spacing: 0;
 }
 .textBlock__subtitle {
-  margin-left: 45.4286rem;
+  text-align: right;
   background: linear-gradient(to bottom right, #74e6cf, #c0e594);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

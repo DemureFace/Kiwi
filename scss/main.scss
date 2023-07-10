@@ -104,14 +104,11 @@ header {
 }
 
 .banner {
-  &__background {
+  &__container {
     position: relative;
-    height: 67.5rem;
-    overflow: hidden;
-
-    &--image {
-      height: 100%;
-    }
+  }
+  &__background {
+    position: absolute;
   }
   &__title {
     position: absolute;
@@ -222,31 +219,41 @@ header {
 }
 
 .ourMission {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6.25rem 0 0 11.375rem;
+  &__container {
+    position: relative;
+    padding: 6.25rem 28.375rem 0 21.25rem;
+  }
 
   &__textBlock {
   }
 
   &__image__foots {
-    margin-bottom: 13.6429rem;
+    position: absolute;
+    top: 10.1875rem;
+    left: 11.375rem;
+  }
+
+  &__image__decorationRope {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }
 
 .textBlock {
   &__pre-title {
     display: flex;
+    gap: 0.625rem;
   }
 
   &__title {
+    margin-top: 1rem;
     width: 66rem;
     letter-spacing: 0;
   }
 
   &__subtitle {
-    margin-left: 45.4286rem;
+    text-align: right;
     background: linear-gradient(to bottom right, #74e6cf, #c0e594);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
