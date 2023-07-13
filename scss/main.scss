@@ -34,7 +34,7 @@ h5 {
   font-family: Roboto;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 3.5px;
+  letter-spacing: 0.2188rem;
   text-transform: uppercase;
 }
 
@@ -43,9 +43,6 @@ p {
   font-family: Roboto;
   font-size: 1rem;
   font-weight: 400;
-}
-
-input {
 }
 
 input::placeholder {
@@ -63,53 +60,123 @@ button {
   font-size: 1.8125rem;
   font-weight: 500;
   cursor: pointer;
-}
-
-#header__logo {
   transition: all 0.4s ease;
+
+  &:hover {
+    background-color: #50cfb6;
+  }
 }
 
-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #ffffff;
   z-index: 9999;
+  transition: all 0.4s ease;
+
+  &__container {
+    position: relative;
+    padding: 1.25rem 0 1.25rem 1.75rem;
+    transition: all 0.4s ease;
+  }
+
+  &__dropdown {
+    // display: none;
+    position: fixed;
+    top: 4.75rem;
+    left: 40.385rem;
+    transition: all 0.4s ease;
+    transform: scaleY(0);
+    padding-top: 2rem;
+
+    &:hover {
+      transform: scaleY(1);
+    }
+  }
+
+  &__burger {
+    display: none;
+  }
 }
 
-.scrolling {
-  margin-right: 6.25rem;
+.down:hover ~ .header__dropdown {
+  transform: scaleY(1);
+}
+.dropdown {
+  &__list {
+    box-shadow: 0.625rem 0.625rem 1.875rem 0px rgba(1, 163, 164, 0.15);
+    margin: 1.875rem;
+    margin-top: 0;
+    background-color: #fff;
+  }
+
+  &__item {
+    padding: 1.875rem 1.25rem;
+    background: #ffffff;
+    color: $title;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background-color: $bg;
+    }
+  }
 }
 
 .navigation {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 6.25rem;
 
   &__link {
+    position: relative;
+    padding-bottom: 0.25rem;
+  }
+
+  &__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.25rem;
+    background: $primary;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+  }
+
+  &__link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  a {
     font-family: Bebas Neue;
     font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 0.075rem;
     color: $title;
-
-    &:not(:last-child) {
-      margin-right: 6.25rem;
-    }
-  }
-  &__logo {
-    margin: 1.125rem 6.25rem 1.125rem 0;
   }
 }
 
 .banner {
   &__container {
     position: relative;
+    height: 1080px;
+    overflow: hidden;
   }
   &__background {
     position: absolute;
   }
+
   &__title {
     position: absolute;
     top: 12rem;
@@ -136,15 +203,25 @@ header {
   }
 }
 
+.main-banner__bg {
+  width: 100%;
+  height: 1080px;
+}
+
 .howItWorks {
   &__title {
     text-align: center;
     margin-top: 6.25rem;
   }
 
+  &__decoration {
+    display: none;
+  }
+
   &__cards {
     display: flex;
     justify-content: center;
+    gap: 11.6875rem;
     margin-top: 1.25rem;
   }
 
@@ -171,10 +248,6 @@ header {
   }
 }
 
-.cards__card:nth-child(2) {
-  margin: 0 11.6875rem;
-}
-
 .boxOfMonth {
   margin-top: 6.25rem;
 
@@ -184,6 +257,7 @@ header {
     align-items: center;
     padding: 4.5rem 1.5625rem;
     background-color: $bg;
+    overflow: hidden;
   }
   &__right {
     margin-left: 4.625rem;
@@ -213,7 +287,11 @@ header {
     &__image {
       position: absolute;
       top: 25.575rem;
-      left: 75rem;
+      left: 71rem;
+    }
+
+    &--mobile {
+      display: none;
     }
   }
 }
@@ -277,6 +355,8 @@ header {
   }
 
   &__image {
+    display: flex;
+    justify-content: center;
     margin-top: 1rem;
     text-align: center;
   }
@@ -337,6 +417,10 @@ header {
     }
   }
 
+  .swiper-container {
+    display: none;
+  }
+
   &__card:nth-child(2) {
     margin: 0 1.875rem;
   }
@@ -367,16 +451,25 @@ header {
     align-items: center;
     gap: 1.25rem;
     margin-top: 0.25rem;
+
+    &__image--mobile {
+      display: none;
+    }
   }
 
   &__subtitle {
     margin-top: 1rem;
+    width: 76.25rem;
   }
 
   &__decoration {
     position: absolute;
     top: 21.75rem;
     left: 14.25rem;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__form {
@@ -398,6 +491,9 @@ header {
 
     &__button {
       padding: 1rem 6.64rem;
+      &--mobile {
+        display: none;
+      }
     }
   }
 
@@ -458,6 +554,7 @@ header {
     padding: 6.25rem 3.875rem;
 
     &__title {
+      text-transform: uppercase;
     }
 
     &__image {
@@ -466,6 +563,7 @@ header {
 
     &__subtitle {
       width: 25.375rem;
+      text-transform: uppercase;
     }
 
     &__button {
@@ -477,7 +575,28 @@ header {
 
 .slider {
   &__container {
-    padding: 6.25rem 6.25rem 0 0;
+    position: relative;
+    padding: 6.25rem 6.25rem 6.25rem 0;
+  }
+
+  &__element {
+    &--first {
+      position: absolute;
+      top: 4.125rem;
+      right: 0;
+    }
+
+    &--second {
+      position: absolute;
+      bottom: 0;
+      left: 6.25rem;
+    }
+
+    &--third {
+      position: absolute;
+      left: 0;
+      top: 6.5rem;
+    }
   }
 
   &__bg {
@@ -525,7 +644,7 @@ header {
       width: 0.0625rem;
       height: 17.3rem;
       right: 0.125rem;
-      top: 8.1rem;
+      top: 10rem;
     }
   }
 
@@ -583,10 +702,12 @@ header {
 }
 
 .footer {
-  margin-top: 10.25rem;
   background-color: #ffffff;
   &__container {
-    margin: 0 auto;
+  }
+
+  &__logo--mobile {
+    display: none;
   }
 
   &__top {
@@ -598,10 +719,20 @@ header {
     padding: 4.375rem 21.875rem;
   }
 
+  &__right {
+    display: flex;
+    gap: 1.875rem;
+  }
+
   &__links {
     display: flex;
     align-items: center;
     gap: 1.875rem;
+  }
+
+  &__socials__links {
+    display: flex;
+    gap: 1.25rem;
   }
 
   &__link {
@@ -645,4 +776,1047 @@ header {
   display: flex;
   align-items: center;
   gap: 0.625rem;
+}
+
+@media screen and (max-width: 1680px) {
+  .header {
+    &__dropdown {
+      left: 33.385rem;
+    }
+  }
+
+  .banner {
+    &__button {
+      left: 43.75rem;
+    }
+  }
+
+  .signUp {
+    &__container {
+      padding: 6.25rem 10.875rem 15.1875rem;
+    }
+
+    &__decoration {
+      top: 20.75rem;
+      left: 3.25rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .main-banner__bg {
+    margin-top: 9.1667rem;
+    height: 935px;
+  }
+
+  .header {
+    &__dropdown {
+      left: 26.385rem;
+    }
+  }
+
+  .banner {
+    &__title {
+      left: 25.8125rem;
+    }
+
+    &__subtitle {
+      &:first-of-type {
+        left: 53rem;
+      }
+      &:last-of-type {
+        left: 62.875rem;
+      }
+    }
+
+    &__button {
+      top: 60.75rem;
+      left: 36.25rem;
+    }
+  }
+
+  .signUp {
+    &__container {
+      padding: 6.25rem 6.875rem 15.1875rem;
+    }
+
+    &__decoration {
+      left: 0;
+    }
+
+    &__subtitle {
+      width: 79.25rem;
+    }
+    &__image {
+      top: 11.5rem;
+      img {
+        width: 52.5rem;
+      }
+    }
+  }
+
+  .footer {
+    &__top {
+      padding: 4.375rem 14.875rem;
+    }
+
+    &__bottom {
+      padding: 0.625rem 14.875rem;
+    }
+  }
+
+  .slider {
+    &__element {
+      &--first {
+        img {
+          width: 11.7188rem;
+        }
+      }
+
+      &--second {
+        img {
+          width: 6.375rem;
+        }
+      }
+
+      &--third {
+        img {
+          width: 11.7188rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+  .main-banner__bg {
+    margin-top: 11.1667rem;
+    height: 587px;
+  }
+
+  .header {
+    &__dropdown {
+      top: 7.75rem;
+      left: 22.385rem;
+    }
+  }
+
+  .banner {
+    &__container {
+      height: 720px;
+    }
+
+    &__title {
+      left: 25.8125rem;
+    }
+
+    &__subtitle {
+      &:first-of-type {
+        left: 53rem;
+      }
+      &:last-of-type {
+        left: 62.875rem;
+      }
+    }
+
+    &__button {
+      top: 52.75rem;
+      left: 34.25rem;
+    }
+  }
+
+  .howItWorks__cards {
+    gap: 1.5rem;
+  }
+
+  .card__description {
+    width: 100%;
+  }
+
+  .left__image {
+    img {
+      width: 44.75rem;
+    }
+  }
+
+  .right__button__image {
+    top: 20.575rem;
+    left: 60rem;
+  }
+
+  .signUp {
+    &__container {
+      padding: 6.25rem 2.875rem 15.1875rem;
+    }
+
+    &__decoration {
+      top: 22.75rem;
+      left: -1.75rem;
+      img {
+        width: 10rem;
+      }
+    }
+
+    &__subtitle {
+      width: 79.25rem;
+    }
+    &__image {
+      top: 11.5rem;
+      img {
+        width: 52.5rem;
+      }
+    }
+  }
+
+  .ourMission__container {
+    padding: 4.25rem 6.375rem;
+  }
+
+  .ourMission__image {
+    &__foots {
+      top: 9.1875rem;
+      left: 3.375rem;
+      z-index: -1;
+      img {
+        width: 7.6875rem;
+      }
+    }
+
+    &__decorationRope {
+      img {
+        width: 19.5625rem;
+      }
+    }
+  }
+
+  .recentPosts__image {
+    img {
+      width: 84.5rem;
+    }
+  }
+
+  .blog__card__content {
+    width: 27.1875rem;
+  }
+
+  .blog__cards {
+    padding: 0 1.5625rem;
+  }
+
+  .slider__container {
+    padding: 6.25rem 2.25rem 6.25rem 0;
+  }
+
+  .slide {
+    gap: 2.25rem;
+    &__background {
+      img {
+        width: 41.25rem;
+      }
+    }
+  }
+
+  .slide__content::after {
+    right: 0.2rem;
+  }
+
+  .footer {
+    &__top {
+      padding: 2.375rem 10.875rem;
+    }
+
+    &__bottom {
+      padding: 0.625rem 10.875rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__logo {
+    img {
+      width: 8rem;
+    }
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+  .main-banner__bg {
+    margin-top: 7rem;
+    height: 587px;
+  }
+
+  .header {
+    &__dropdown {
+      top: 4.75rem;
+      left: 14.385rem;
+    }
+  }
+
+  .banner {
+    &__container {
+      height: 720px;
+    }
+
+    &__title {
+      top: 10rem;
+      left: 5.8125rem;
+    }
+
+    &__subtitle {
+      &:first-of-type {
+        top: 15.875rem;
+        left: 33rem;
+      }
+      &:last-of-type {
+        top: 21.375rem;
+        left: 42.875rem;
+      }
+    }
+
+    &__button {
+      top: 49.75rem;
+      left: 23.4375rem;
+    }
+  }
+
+  .howItWorks__cards {
+    gap: 1.5rem;
+  }
+
+  .card__description {
+    width: 100%;
+  }
+
+  .left__image {
+    img {
+      width: 44.75rem;
+    }
+  }
+
+  .right__button__image {
+    top: 20.575rem;
+    left: 60rem;
+  }
+
+  .signUp {
+    &__container {
+      padding: 6.25rem 2.875rem 15.1875rem;
+    }
+
+    &__decoration {
+      top: 22.75rem;
+      left: -1.75rem;
+      img {
+        width: 10rem;
+      }
+    }
+
+    &__subtitle {
+      width: 79.25rem;
+    }
+    &__image {
+      top: 11.5rem;
+      img {
+        width: 52.5rem;
+      }
+    }
+  }
+
+  .ourMission__container {
+    padding: 4.25rem 1.5rem;
+  }
+
+  .ourMission__image {
+    &__foots {
+      top: 8.1875rem;
+      left: 0.375rem;
+      z-index: -1;
+
+      img {
+        width: 7.6875rem;
+      }
+    }
+
+    &__decorationRope {
+      z-index: -1;
+
+      img {
+        width: 14.5625rem;
+      }
+    }
+  }
+
+  .recentPosts__image {
+    img {
+      width: 63.5rem;
+    }
+  }
+
+  .blog__container {
+    padding: 4.25rem 0;
+  }
+
+  .blog__card__content {
+    width: 20.1875rem;
+  }
+
+  .blog__card:nth-child(1) .blog__card__content {
+    padding-top: 4.4167rem;
+  }
+
+  .blog__card:nth-child(3) .blog__card__content {
+    padding-top: 3.3333rem;
+  }
+
+  .blog__cards {
+    padding: 0 1.5625rem;
+  }
+
+  .signUp__container {
+    z-index: 1;
+  }
+
+  .signUp__image {
+    z-index: -1;
+  }
+
+  .slider__container {
+    padding: 6.25rem 2.25rem 6.25rem 0;
+  }
+
+  .slide {
+    gap: 2.25rem;
+    &__background {
+      img {
+        width: 24.25rem;
+      }
+    }
+  }
+
+  .slide__content::after {
+    right: 0.2rem;
+  }
+
+  .footer {
+    &__top {
+      padding: 1.375rem 2.875rem;
+    }
+
+    &__bottom {
+      padding: 0.625rem 2.875rem;
+    }
+  }
+}
+
+@media screen and (min-width: 320px), (max-width: 666px) {
+  .header {
+    position: static;
+
+    &__container {
+      padding: 0;
+    }
+  }
+  .navigation {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+
+    &__top {
+    }
+  }
+
+  .burger {
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4167rem 1.3333rem;
+    }
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3333rem;
+      justify-content: center;
+
+      &--element {
+        width: 1.0625rem;
+        height: 0.0833rem;
+        background-color: #34495e;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &__list {
+      position: fixed;
+      width: 100%;
+      transform: translateX(55.6667rem);
+      z-index: 1;
+      display: grid;
+      justify-items: center;
+      gap: 2.0833rem;
+      padding: 2.6rem 8.1667rem;
+      background-color: $bg;
+      transition: all 0.3s ease;
+    }
+
+    &__link {
+      color: $title;
+      font-family: Bebas Neue;
+      font-size: 1.6667rem;
+      letter-spacing: 0.0833rem;
+    }
+
+    &__decoration {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .main-banner__bg {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .banner {
+    &__container {
+      height: 37.3333rem;
+    }
+
+    &__subtitle {
+      font-size: 2.1667rem;
+
+      &:first-of-type {
+        top: 4.3333rem;
+        left: 28%;
+      }
+      &:last-of-type {
+        top: 4.3333rem;
+        left: 50%;
+      }
+    }
+
+    &__title {
+      top: 0;
+      left: 20%;
+      font-size: 2.6667rem;
+      letter-spacing: 0.1333rem;
+    }
+    &__button {
+      top: auto;
+      bottom: 1.6667rem;
+      left: 1.3333rem;
+      width: 24rem;
+    }
+  }
+
+  .howItWorks {
+    padding: 4.1667rem 1.3333rem 2.5rem;
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__cards {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    &__decoration {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+
+      &--element {
+        width: 7.5rem;
+        height: 0.0833rem;
+        background: var(--1, linear-gradient(141deg, #74e6cf 0%, #c0e594 100%));
+      }
+    }
+
+    &__button {
+      margin-top: 2.5rem;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  .card__description {
+    font-size: 1.1667rem;
+    line-height: 150%;
+  }
+
+  .boxOfMonth {
+    margin-top: 0;
+
+    &__container {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    &__right {
+      padding: 1.6667rem 2.1667rem;
+      margin-left: 0;
+    }
+  }
+
+  .right__button {
+    display: none;
+
+    &--mobile {
+      width: 24rem;
+      display: block;
+      padding: 1rem 3.643rem;
+      margin: 1.6667rem 1.3333rem 0 1.3333rem;
+    }
+  }
+
+  .right__title {
+    display: grid;
+    justify-items: center;
+  }
+
+  .right__description {
+    width: 100%;
+    text-align: center;
+    color: #696969;
+    font-size: 1.1667rem;
+  }
+
+  .left__image img {
+    width: 100%;
+  }
+
+  .ourMission {
+    &__container {
+      padding: 5rem 1.3333rem 8.8333rem;
+    }
+
+    &__image__decorationRope {
+      display: none;
+    }
+
+    &__image__foots {
+      left: 10.1667rem;
+      bottom: 2.5rem;
+      top: auto;
+    }
+  }
+
+  .textBlock {
+    &__title {
+      text-align: center;
+      font-size: 2.6667rem;
+      width: 100%;
+      margin-top: 1.6667rem;
+      line-height: 2.95rem;
+    }
+
+    &__pre-title {
+      display: grid;
+      justify-items: center;
+      letter-spacing: 0.1rem;
+    }
+
+    &__subtitle {
+      text-align: center;
+      font-size: 2.1667rem;
+      line-height: normal;
+    }
+  }
+
+  .recentPosts {
+    &__container {
+      padding: 4.1667rem 1.3333rem 1.1667rem;
+    }
+
+    &__image {
+      img {
+        width: 100%;
+      }
+    }
+
+    &__pre-title {
+      letter-spacing: 0.1rem;
+    }
+
+    &__title {
+      margin-bottom: 1.6667rem;
+      font-family: Advent Pro;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  .blog {
+    &__container {
+      margin-top: 4.1667rem;
+      padding: 0;
+      padding-bottom: 3rem;
+    }
+    &__image {
+      display: none;
+    }
+
+    &__title {
+      font-family: Advent Pro;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    &__cards {
+      display: none;
+    }
+
+    &__card {
+      text-align: left;
+
+      &__content {
+        width: 100%;
+      }
+
+      &__title {
+        font-family: Advent Pro;
+        font-weight: 700;
+      }
+
+      &__decoration {
+        margin-top: 1.3333rem;
+      }
+
+      &__description {
+        margin-top: 1.3333rem;
+        line-height: 1.2rem;
+        font-size: 1rem;
+      }
+
+      &__button {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1.6667rem;
+
+        button {
+          display: flex;
+          align-items: center;
+
+          gap: 0.4167rem;
+          padding: 0.3333rem 0.3333rem 0.3333rem 0.75rem;
+          background: $bg;
+          color: $primary;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .blog__card:nth-child(1) .blog__card__content {
+    padding-top: 2.0833rem;
+  }
+  .swiper-slide:nth-child(2) .blog__card__content {
+    padding: 1.25rem 2.0833rem 1.6667rem;
+  }
+
+  .blog__card__content:nth-child(2) .blog__card__title {
+    letter-spacing: normal;
+  }
+
+  .swiper {
+    &-container {
+      width: 100%;
+      height: 100%;
+      margin-top: 1.6667rem;
+      padding: 0 1.3333rem;
+    }
+
+    &-wrapper {
+      width: 80rem;
+    }
+
+    &-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-pagination-bullet {
+      width: 5.5rem;
+      height: 0.1667rem;
+      border-radius: 0.8333rem;
+      background: var(--1, linear-gradient(141deg, #74e6cf 0%, #c0e594 100%));
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .signUp {
+    margin-top: 1.5rem;
+
+    &__container {
+      padding: 4.1667rem 1.3333rem 2.5rem;
+      text-align: center;
+    }
+
+    &__title {
+      &__text {
+        margin-top: 1.6667rem;
+        font-family: Advent Pro;
+        font-size: 1.9rem;
+        font-weight: 700;
+      }
+      &__image {
+        display: none;
+
+        &--mobile {
+          display: block;
+        }
+      }
+    }
+
+    &__pre-title {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    &__subtitle {
+      width: 100%;
+      font-size: 2.6667rem;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.1333rem;
+    }
+
+    &__decoration {
+      display: none;
+
+      &--mobile {
+        margin-top: 0.5rem;
+        display: block;
+      }
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__form {
+      width: 100%;
+      border-radius: 0;
+      border: 0.0833rem solid rgba(116, 230, 207, 1);
+      margin-top: 0.8333rem;
+      padding: 1.6667rem 0 1.6667rem 1.3333rem;
+
+      &__button {
+        display: none;
+
+        &--mobile {
+          margin-top: 1.6667rem;
+          width: 100%;
+          display: block;
+          padding: 1.3333rem;
+        }
+      }
+    }
+
+    &__description {
+      width: 100%;
+      line-height: 1.5rem;
+    }
+  }
+
+  .popUp {
+    border: 0;
+    &__container {
+      flex-direction: column;
+    }
+
+    &__left {
+      padding: 0 7rem;
+    }
+
+    &__right {
+      padding: 0;
+
+      &__wrapper {
+        padding: 2.5rem 1.5rem 0 1.5rem;
+      }
+
+      &__title {
+        font-family: Advent Pro;
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: none;
+      }
+
+      &__image {
+        margin: 1.5833rem 0 2.5rem;
+      }
+
+      &__subtitle {
+        font-family: Advent Pro;
+        font-weight: 700;
+        width: 100%;
+        text-transform: none;
+      }
+
+      &__button {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 2rem;
+        padding: 1.3333rem 0;
+      }
+    }
+  }
+  .fancybox-button {
+    display: none;
+  }
+
+  .fancybox-slide--html {
+    padding: 0 1.3333rem;
+  }
+
+  .slider {
+    &__container {
+      padding: 4.1667rem 0.75rem 2.5rem 1.3333rem;
+      position: relative;
+    }
+
+    &__element--first {
+      display: none;
+    }
+    &__element--second {
+      display: none;
+    }
+    &__element--third {
+      display: none;
+    }
+    &__element--mobile {
+      display: block;
+      position: absolute;
+      top: 10rem;
+      left: 3rem;
+      z-index: -1;
+    }
+
+    &__titles {
+      margin: 0;
+      text-align: center;
+    }
+
+    &__pre-title {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+
+    &__title {
+      margin-top: 0.8333rem;
+      font-family: Advent Pro;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  .slide {
+    &__background {
+      display: none;
+    }
+    &__head {
+      justify-content: center;
+      gap: 0.8333rem;
+      margin-right: 0;
+
+      &--text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5833rem;
+      }
+    }
+
+    &__decoration {
+      margin: 0.8333rem 0 0 0;
+      text-align: center;
+    }
+
+    &__description {
+      width: 100%;
+      padding: 0;
+      margin-top: 1.25rem;
+
+      p {
+        font-size: 14px;
+        line-height: 150%;
+      }
+    }
+
+    &__buttons {
+      text-align: center;
+      margin-top: 1.25rem;
+    }
+  }
+
+  .slide__description::after {
+    bottom: 2.5rem;
+  }
+
+  .slide__content::after {
+    top: 8.5rem;
+  }
+
+  .footer {
+    &__top {
+      display: grid;
+      justify-content: center;
+      padding: 2.5rem 5.8333rem 1.6667rem;
+    }
+
+    &__right {
+      display: grid;
+    }
+    &__logo {
+      display: none;
+
+      &--mobile {
+        display: block;
+      }
+    }
+    &__links {
+      flex-direction: column;
+      margin-top: 1.6667rem;
+      font-size: 1.3333rem;
+      font-weight: 700;
+      letter-spacing: 0.0667rem;
+    }
+
+    &__socials__links {
+      margin-top: 0.8333rem;
+    }
+
+    &__link--img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &__bottom {
+      padding: 0.8333rem 1.3333rem;
+    }
+
+    &__text {
+      font-size: 0.9167rem;
+    }
+  }
 }

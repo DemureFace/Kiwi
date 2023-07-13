@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kiwi | DemureFace</title>
 
+    <!-- add Swiper.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
     <!-- add fancybox -->
     <link
       rel="stylesheet"
@@ -13,7 +19,7 @@
 
     <!-- adds fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Galada&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500;700&family=Bebas+Neue&family=Galada&family=Roboto&display=swap"
       rel="stylesheet"
     />
 
@@ -25,16 +31,50 @@
     <header class="header">
       <div class="header__container">
         <nav class="navigation">
-          <a href="" class="navigation__link">HOME</a>
-          <a href="" class="navigation__link">BOXES</a>
-
-          <div class="navigation__logo" id="header__logo">
+          <a href="#" class="navigation__link">HOME</a>
+          <div class="navigation__link down">
+            <a href="#">BOXES</a>
+          </div>
+          <div class="navigation__logo">
             <img src="/images/logo.png" alt="Kiwi_Logo" />
           </div>
 
-          <a href="" class="navigation__link">ABOUT</a>
-          <a href="" class="navigation__link">ACCOUNT</a>
+          <a href="#" class="navigation__link">ABOUT</a>
+          <a href="#" class="navigation__link">ACCOUNT</a>
+
+          <div class="header__dropdown">
+            <ul class="dropdown__list">
+              <li class="dropdown__item">WHAT'S INSIDE</li>
+              <li class="dropdown__item">KIWI ECO BOX</li>
+            </ul>
+          </div>
         </nav>
+        <div class="header__burger">
+          <div class="burger__top">
+            <div class="burger__logo">
+              <img src="/images/mobile/header__Logo.png" alt="logo" />
+            </div>
+            <div class="burger__menu">
+              <span class="burger__menu--element"></span>
+              <span class="burger__menu--element"></span>
+              <span class="burger__menu--element"></span>
+            </div>
+          </div>
+          <div class="burger__list">
+            <a href="#" class="burger__link">HOME</a>
+            <img src="/images/icons/zic-zac.svg" alt="" />
+            <a href="#" class="burger__link">WHAT'S INSIDE</a>
+            <img src="/images/icons/zic-zac.svg" alt="" />
+            <a href="#" class="burger__link">KIWI ECO BOX</a>
+            <img src="/images/icons/zic-zac.svg" alt="" />
+            <a href="#" class="burger__link">ABOUT</a>
+            <img src="/images/icons/zic-zac.svg" alt="" />
+            <a href="#" class="burger__link">ACCOUNT</a>
+            <div class="burger__decoration">
+              <img src="/images/mobile/decoration_burger.png" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -42,8 +82,19 @@
       <section class="banner">
         <div class="banner__container">
           <div class="banner__background">
-            <img src="images/content/main-Banner.png" alt="Banner" />
+            <picture>
+              <source
+                media="(max-width: 320px)"
+                srcset="images/mobile/main__banner.png"
+              />
+              <img
+                src="images/content/main_bg.png"
+                alt="Banner"
+                class="main-banner__bg"
+              />
+            </picture>
           </div>
+
           <h1 class="banner__title">EVERYTHING YOU NEED</h1>
           <h2 class="banner__subtitle">to Start Living</h2>
           <h2 class="banner__subtitle">Zero-Waste</h2>
@@ -65,6 +116,11 @@
               an easy way to start your zero-waste journey
             </p>
           </div>
+          <div class="howItWorks__decoration">
+            <span class="howItWorks__decoration--element"></span>
+            <img src="/images/icons/zic-zac.svg" alt="" />
+            <span class="howItWorks__decoration--element"></span>
+          </div>
 
           <div class="cards__card">
             <img
@@ -77,6 +133,12 @@
               Every month receive your box with essential products, but plastic
               free and safe for the environment
             </p>
+          </div>
+
+          <div class="howItWorks__decoration">
+            <span class="howItWorks__decoration--element"></span>
+            <img src="/images/icons/zic-zac.svg" alt="" />
+            <span class="howItWorks__decoration--element"></span>
           </div>
 
           <div class="cards__card">
@@ -100,9 +162,14 @@
       <section class="boxOfMonth">
         <div class="boxOfMonth__container">
           <div class="boxOfMonth__left">
-            <div class="left__image">
-              <img src="/images/content/section_boam.png" alt="image" />
-            </div>
+            <picture class="left__image">
+              <source
+                media="(max-width: 666px)"
+                srcset="images/mobile/boxOfMonth.png"
+              />
+              <img src="images/content/section_boam.png" alt="Banner" />
+            </picture>
+            <button class="right__button--mobile">SEE WHAT'S INSIDE</button>
           </div>
 
           <div class="boxOfMonth__right">
@@ -165,9 +232,13 @@
             Join the conversation an help us create a new world!
           </h5>
           <h3 class="recentPosts__title">Recent Posts</h3>
-          <div class="recentPosts__image">
-            <img src="/images/content/section_recent-posts.png" alt="image" />
-          </div>
+          <picture class="recentPosts__image">
+            <source
+              media="(max-width: 666px)"
+              srcset="images/mobile/Recent.png"
+            />
+            <img src="images/content/section_recent-posts.png" alt="Banner" />
+          </picture>
         </div>
       </section>
 
@@ -243,11 +314,93 @@
               </div>
             </div>
           </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="blog__card">
+                  <img
+                    src="/images/content/blog_card1.jpg"
+                    alt="card1"
+                    class="blog__card__image"
+                  />
+                  <div class="blog__card__content">
+                    <h4 class="blog__card__title">WHY KIWI ECO BOX?</h4>
+                    <div class="blog__card__decoration">
+                      <img src="/images/icons/zic-zac.svg" alt="zic-zac" />
+                    </div>
+                    <p class="blog__card__description">
+                      Get started by signing up for monthly subscription. We
+                      bring you an easy way to start your zero-waste journey
+                    </p>
+                    <div class="blog__card__button">
+                      <button>
+                        READ MORE <img src="/images/mobile/plus.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="blog__card">
+                  <img
+                    src="/images/content/blog_card2.png"
+                    alt="blog2"
+                    class="blog__card__image"
+                  />
+                  <div class="blog__card__content">
+                    <h4 class="blog__card__title">
+                      WHAT IS INSIDE THE APRIL KIWI ECO BOX? PORTABLE LUNCH BOX
+                    </h4>
+                    <div class="blog__card__decoration">
+                      <img src="/images/icons/zic-zac.svg" alt="zic-zac" />
+                    </div>
+                    <p class="blog__card__description">
+                      Every month receive your box with essential products, but
+                      plastic free and safe for the environment
+                    </p>
+                    <div class="blog__card__button">
+                      <button>
+                        READ MORE <img src="/images/mobile/plus.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="blog__card">
+                  <img
+                    src="/images/content/blog_card3.png"
+                    alt="blog3"
+                    class="blog__card__image"
+                  />
+                  <div class="blog__card__content">
+                    <h4 class="blog__card__title">MAKE A DIFFERENCE</h4>
+                    <div class="blog__card__decoration">
+                      <img src="/images/icons/zic-zac.svg" alt="zic-zac" />
+                    </div>
+                    <p class="blog__card__description">
+                      Small steps can lead to bigger changes, and now you are
+                      the change. Let's build community of people who care
+                    </p>
+                    <div class="blog__card__button">
+                      <button>
+                        READ MORE <img src="/images/mobile/plus.png" alt="" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
       </section>
 
       <section class="signUp">
         <div class="signUp__container">
+          <div class="signUp__title__image--mobile">
+            <img src="/images/icons/zic-zac.svg" alt="zic-zac" />
+          </div>
           <h5 class="signUp__pre-title">STAY IN THE KNOW</h5>
 
           <div class="signUp__title">
@@ -258,13 +411,16 @@
               HEAR ABOUT THE LATEST SNEAK PEAKS AND SPOILERS
             </h3>
           </div>
+          <div class="signUp__decoration--mobile">
+            <img src="images/mobile/signUp.png" alt="image" />
+          </div>
           <h1 class="signUp__subtitle">
             GET CAUSEBOX DELIVERED DIRECTLY
             <span style="color: #01a3a4">TO YOUR INBOX!</span>
           </h1>
           <div class="signUp__decoration">
             <img
-              src="/images/dicoration-elements/leaflet-flip.png"
+              src="images/dicoration-elements/leaflet-flip.png"
               alt="image"
             />
           </div>
@@ -277,23 +433,35 @@
             />
             <button type="submit" class="signUp__form__button">SIGN UP</button>
           </form>
-
+          <button
+            type="submit"
+            class="signUp__form__button--mobile signUp__form__button"
+          >
+            SIGN UP
+          </button>
           <div class="signUp__popUp popUp" id="successPopup">
             <div class="popUp__container">
-              <div class="popUp__left">
-                <img src="/images/content/popUp.jpg" alt="image" />
-              </div>
+              <picture class="popUp__left">
+                <source
+                  media="(max-width: 666px)"
+                  srcset="images/mobile/popUp.png"
+                />
+                <img src="images/content/popUp.jpg" alt="Banner" />
+              </picture>
               <div class="popUp__right">
-                <h3 class="popUp__right__title">
-                  THANK YOU FOR <span style="color: #01a3a4">SUBSCRIBING!</span>
-                </h3>
-                <div class="popUp__right__image">
-                  <img src="/images/icons/zic-zac.svg" alt="zic-zac" />
+                <div class="popUp__right__wrapper">
+                  <h3 class="popUp__right__title">
+                    Thank you for
+                    <span style="color: #01a3a4">subscribing!</span>
+                  </h3>
+                  <div class="popUp__right__image">
+                    <img src="/images/icons/zic-zac.svg" alt="zic-zac" />
+                  </div>
+                  <h4 class="popUp__right__subtitle">
+                    Now you will receive alerts when new news and boxes are
+                    released!
+                  </h4>
                 </div>
-                <h4 class="popUp__right__subtitle">
-                  NOW YOU WILL RECEIVE ALERTS WHEN NEW NEWS AND BOXES ARE
-                  RELEASED!
-                </h4>
                 <button type="submit" class="popUp__right__button">GOOD</button>
               </div>
             </div>
@@ -315,8 +483,26 @@
 
       <section class="slider">
         <div class="slider__container">
-          <div class="slider__bg">
-            <img src="/images/dicoration-elements/clientsSay-bg.jpg" />
+          <div class="slider__element--first">
+            <img
+              src="/images/dicoration-elements/clientsSay(1).png"
+              alt="image"
+            />
+          </div>
+          <div class="slider__element--second">
+            <img
+              src="/images/dicoration-elements/clientsSay(2).png"
+              alt="image"
+            />
+          </div>
+          <div class="slider__element--third">
+            <img
+              src="/images/dicoration-elements/clientsSay(3).png"
+              alt="image"
+            />
+          </div>
+          <div class="slider__element--mobile">
+            <img src="images/mobile/decoration.png" alt="decoration" />
           </div>
           <div class="slider__titles">
             <h5 class="slider__pre-title">WHAT DO OUR</h5>
@@ -324,19 +510,22 @@
           </div>
           <div class="slider__wrapper">
             <div class="slider__slide slide">
-              <div class="slide__img">
+              <div class="slide__background">
                 <img src="/images/content/clientsSay.jpg" alt="image" />
               </div>
               <div class="slide__content">
                 <div class="slide__head">
-                  <h4 class="slide__name">JESSICA T.</h4>
-                  <div class="slide__rate">
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <span>5/5</span>
+                  <img src="images/mobile/avatar.png" alt="avatar" />
+                  <div class="slide__head--text">
+                    <h4 class="slide__name">JESSICA T.</h4>
+                    <div class="slide__rate">
+                      <img src="/images/icons/star.svg" alt="star" />
+                      <img src="/images/icons/star.svg" alt="star" />
+                      <img src="/images/icons/star.svg" alt="star" />
+                      <img src="/images/icons/star.svg" alt="star" />
+                      <img src="/images/icons/star.svg" alt="star" />
+                      <span>5/5</span>
+                    </div>
                   </div>
                 </div>
                 <div class="slide__decoration">
@@ -382,65 +571,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="slider__slide slide">
-              <div class="slide__img">
-                <img src="/images/content/clientsSay.jpg" alt="image" />
-              </div>
-              <div class="slide__content">
-                <div class="slide__head">
-                  <h4 class="slide__name">JESSICA T.</h4>
-                  <div class="slide__rate">
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <img src="/images/icons/star.svg" alt="star" />
-                    <span>5/5</span>
-                  </div>
-                </div>
-                <div class="slide__decoration">
-                  <img src="/images/icons/zic-zac.svg" alt="zic-zag" />
-                </div>
-                <div class="slide__description">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.<br />
-                    <br />Sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud<br />
-                    <br />Sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud<br />
-                    <br />Sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud<br />
-                    <br />Sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud
-                  </p>
-                </div>
-                <div class="slide__buttons">
-                  <button class="slide__button">
-                    <img src="/images/icons/button_arrow.svg" alt="button" />
-                  </button>
-                  <button class="slide__button">
-                    <img src="/images/icons/button_arrow.svg" alt="button" />
-                  </button>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </section>
@@ -448,6 +578,9 @@
       <footer class="footer">
         <div class="footer__container">
           <div class="footer__top">
+            <div class="footer__logo--mobile">
+              <img src="images/mobile/footer__logo.png" alt="logo" />
+            </div>
             <div class="footer__links">
               <a class="footer__link" href="#">HOME</a>
               <a class="footer__link" href="#">BOXES</a>
@@ -459,21 +592,26 @@
             <div class="footer__logo">
               <img src="/images/logo.png" alt="logo" />
             </div>
-            <div class="footer__links">
-              <a class="footer__link" href="#">FAQ</a>
-              <a class="footer__link" href="#">CONTACT US</a>
-              <a class="footer__link--img" href="#"
-                ><img src="images/icons/facebook.svg" alt="link"
-              /></a>
-              <a class="footer__link--img" href="#"
-                ><img src="images/icons/instagram.svg" alt="link"
-              /></a>
-              <a class="footer__link--img" href="#"
-                ><img src="images/icons/twitter.svg" alt="link"
-              /></a>
-              <a class="footer__link--img" href="#"
-                ><img src="images/icons/youtube.svg" alt="link"
-              /></a>
+            <div class="footer__right">
+              <div class="footer__links">
+                <a class="footer__link" href="#">FAQ</a>
+                <a class="footer__link" href="#">CONTACT US</a>
+              </div>
+
+              <div class="footer__socials__links">
+                <a class="footer__link--img" href="#"
+                  ><img src="images/icons/facebook.svg" alt="link"
+                /></a>
+                <a class="footer__link--img" href="#"
+                  ><img src="images/icons/instagram.svg" alt="link"
+                /></a>
+                <a class="footer__link--img" href="#"
+                  ><img src="images/icons/twitter.svg" alt="link"
+                /></a>
+                <a class="footer__link--img" href="#"
+                  ><img src="images/icons/youtube.svg" alt="link"
+                /></a>
+              </div>
             </div>
           </div>
           <div class="footer__bottom">
@@ -488,6 +626,9 @@
       </footer>
     </main>
   </body>
+
+  <!-- add Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
   <!-- add jQuery -->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
