@@ -964,7 +964,7 @@ button:hover {
     padding: 0.625rem 2.875rem;
   }
 }
-@media screen and (min-width: 320px), (max-width: 666px) {
+@media screen and (min-width: 425px), (max-width: 666px) {
   .header {
     position: static;
   }
@@ -1062,6 +1062,7 @@ button:hover {
   .howItWorks__decoration {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2.5rem;
   }
   .howItWorks__decoration--element {
@@ -1078,6 +1079,9 @@ button:hover {
   .card__description {
     font-size: 1.1667rem;
     line-height: 150%;
+  }
+  .card__image {
+    text-align: center;
   }
   .boxOfMonth {
     margin-top: 0;
@@ -1307,6 +1311,7 @@ button:hover {
     flex-direction: column;
   }
   .popUp__left {
+    text-align: center;
     padding: 0 7rem;
   }
   .popUp__right {
@@ -1445,5 +1450,31 @@ button:hover {
   }
   .footer__text {
     font-size: 0.9167rem;
+  }
+}
+@media screen and (min-width: 320px), (max-width: 425px) {
+  .burger__list {
+    height: 100vh;
+    padding-bottom: 30rem;
+  }
+  .banner__container {
+    height: 46.3333rem;
+  }
+  .banner__subtitle:first-of-type {
+    top: 4.3333rem;
+    left: 22%;
+  }
+  .banner__subtitle:last-of-type {
+    top: 4.3333rem;
+    left: 56%;
+  }
+  .banner__button {
+    top: auto;
+    bottom: 1.6667rem;
+    left: 6.3333rem;
+    width: 24rem;
+  }
+  .ourMission__image__foots {
+    left: 13rem;
   }
 }

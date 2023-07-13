@@ -67,6 +67,8 @@ button {
   }
 }
 
+// HEADER
+
 .header {
   position: fixed;
   top: 0;
@@ -167,6 +169,8 @@ button {
   }
 }
 
+// BANNER
+
 .banner {
   &__container {
     position: relative;
@@ -208,6 +212,8 @@ button {
   height: 1080px;
 }
 
+//HOWITWORKS
+
 .howItWorks {
   &__title {
     text-align: center;
@@ -247,6 +253,8 @@ button {
     text-align: center;
   }
 }
+
+//BOXOFMONTH
 
 .boxOfMonth {
   margin-top: 6.25rem;
@@ -296,6 +304,8 @@ button {
   }
 }
 
+//OURMISSION
+
 .ourMission {
   &__container {
     position: relative;
@@ -338,6 +348,8 @@ button {
   }
 }
 
+//RECENTPOSTS
+
 .recentPosts {
   &__container {
     padding: 6.25rem 0;
@@ -361,6 +373,8 @@ button {
     text-align: center;
   }
 }
+
+//BLOG
 
 .blog {
   &__container {
@@ -433,6 +447,8 @@ button {
 .blog__card:nth-child(2) .blog__card__decoration {
   margin-top: 1.5625rem;
 }
+
+//SIGNUP
 
 .signUp {
   &__container {
@@ -539,6 +555,8 @@ button {
   padding: 0;
 }
 
+//POPUP
+
 .popUp {
   &__container {
     display: flex;
@@ -572,6 +590,8 @@ button {
     }
   }
 }
+
+//SLIDER
 
 .slider {
   &__container {
@@ -700,6 +720,8 @@ button {
   margin-left: 0.625rem;
   transform: rotate(180deg);
 }
+
+//FOOTER
 
 .footer {
   background-color: #ffffff;
@@ -1213,7 +1235,7 @@ button {
   }
 }
 
-@media screen and (min-width: 320px), (max-width: 666px) {
+@media screen and (min-width: 425px), (max-width: 666px) {
   .header {
     position: static;
 
@@ -1333,6 +1355,7 @@ button {
     &__decoration {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 2.5rem;
 
       &--element {
@@ -1354,6 +1377,9 @@ button {
   .card__description {
     font-size: 1.1667rem;
     line-height: 150%;
+  }
+  .card__image {
+    text-align: center;
   }
 
   .boxOfMonth {
@@ -1646,6 +1672,7 @@ button {
     }
 
     &__left {
+      text-align: center;
       padding: 0 7rem;
     }
 
@@ -1818,5 +1845,40 @@ button {
     &__text {
       font-size: 0.9167rem;
     }
+  }
+}
+
+@media screen and (min-width: 320px), (max-width: 425px) {
+  .burger__list {
+    height: 100vh;
+    padding-bottom: 30rem;
+  }
+
+  .banner {
+    &__container {
+      height: 46.3333rem;
+    }
+
+    &__subtitle {
+      &:first-of-type {
+        top: 4.3333rem;
+        left: 22%;
+      }
+      &:last-of-type {
+        top: 4.3333rem;
+        left: 56%;
+      }
+    }
+
+    &__button {
+      top: auto;
+      bottom: 1.6667rem;
+      left: 6.3333rem;
+      width: 24rem;
+    }
+  }
+
+  .ourMission__image__foots {
+    left: 13rem;
   }
 }
