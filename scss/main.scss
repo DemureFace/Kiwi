@@ -1235,7 +1235,7 @@ button {
   }
 }
 
-@media screen and (min-width: 425px), (max-width: 666px) {
+@media screen and (max-width: 666px) {
   .header {
     position: static;
 
@@ -1848,7 +1848,7 @@ button {
   }
 }
 
-@media screen and (min-width: 320px), (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .burger__list {
     height: 100vh;
     padding-bottom: 30rem;
